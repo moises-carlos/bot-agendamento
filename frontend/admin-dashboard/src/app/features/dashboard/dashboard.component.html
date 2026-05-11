@@ -1,0 +1,33 @@
+<div class="min-h-screen bg-slate-100 p-6">
+  <header class="flex items-center justify-between mb-6">
+    <h1 class="text-2xl font-bold">Dashboard Administrativo</h1>
+    <button mat-stroked-button color="primary" (click)="logout()">Sair</button>
+  </header>
+
+  <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
+    <mat-card *ngFor="let metric of metrics" class="p-4">
+      <p class="text-sm text-slate-500">{{ metric.label }}</p>
+      <p class="text-3xl font-semibold">{{ metric.value }}</p>
+    </mat-card>
+  </section>
+
+  <section class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+    <mat-card class="p-4">
+      <h2 class="text-lg font-semibold mb-2">Regras de Atendimento</h2>
+      <ul class="list-disc ml-6 text-slate-700">
+        <li>Seg–Sex: 08h–12h / 14h–18h</li>
+        <li>Antecedência mínima: 2h</li>
+        <li>Cancelamento até 24h antes</li>
+      </ul>
+    </mat-card>
+
+    <mat-card class="p-4">
+      <h2 class="text-lg font-semibold mb-2">Próximas Melhorias</h2>
+      <ul class="list-disc ml-6 text-slate-700">
+        <li>Multiempresa (SaaS)</li>
+        <li>Internacionalização</li>
+        <li>Relatórios avançados</li>
+      </ul>
+    </mat-card>
+  </section>
+</div>
