@@ -28,6 +28,9 @@ app:
       expiration-minutes: ${JWT_EXP_MINUTES:120}
   webhook:
     token: ${WEBHOOK_TOKEN:change-me}
+    app-secret: ${WEBHOOK_APP_SECRET:change-me-secret}
+  rate-limit:
+    requests-per-minute: ${RATE_LIMIT_RPM:60}
 
 logging:
   level:

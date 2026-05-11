@@ -11,7 +11,7 @@ public class OpenAiNlpService implements NlpService {
         if (normalized.contains("cancel")) {
             return "CANCELAR";
         }
-        if (normalized.contains("reagend")) {
+        if (normalized.contains("reagendar") || normalized.contains("reagend")) {
             return "REAGENDAR";
         }
         if (normalized.contains("humano")) {

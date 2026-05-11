@@ -44,6 +44,7 @@ npm start
 - RBAC (`ADMIN`, `STAFF`)
 - Rotas protegidas por perfil
 - Estrutura pronta para validação de webhook/rate limiting
+- **Obrigatório em produção**: sobrescrever `JWT_SECRET` e `WEBHOOK_TOKEN` no ambiente
 
 ## Banco e seeds
 - Migrations Flyway em `backend/src/main/resources/db/migration`
