@@ -1,0 +1,39 @@
+{
+  "info": {
+    "name": "Bot Agendamento API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "url": {"raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "auth", "login"]},
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@bot.local\",\n  \"password\": \"admin123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Appointments - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"},
+          {"key": "Authorization", "value": "{{token}}"}
+        ],
+        "url": {"raw": "{{baseUrl}}/api/staff/appointments", "host": ["{{baseUrl}}"], "path": ["api", "staff", "appointments"]},
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clientName\": \"Cliente Teste\",\n  \"clientPhone\": \"+5511999999999\",\n  \"clientEmail\": \"cliente@teste.com\",\n  \"serviceTypeId\": 1,\n  \"startTime\": \"2026-06-01T10:00:00\",\n  \"notes\": \"Primeira consulta\"\n}"
+        }
+      }
+    }
+  ],
+  "variable": [
+    {"key": "baseUrl", "value": "http://localhost:8080"},
+    {"key": "token", "value": "Bearer <TOKEN>"}
+  ]
+}

@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/bot_agendamento}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+
+server:
+  port: ${PORT:8080}
+
+app:
+  security:
+    jwt:
+      secret: ${JWT_SECRET:U3VwZXJTZWNyZXRLZXlTdXBlclNlY3JldEtleVN1cGVyU2VjcmV0S2V5MTIz}
+      expiration-minutes: ${JWT_EXP_MINUTES:120}
+  webhook:
+    token: ${WEBHOOK_TOKEN:change-me}
+
+logging:
+  level:
+    root: INFO
+    com.botagendamento: INFO
